@@ -9,35 +9,57 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
   <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="./add_button.js"></script>
+  <script src="./markerhandler.js"></script>
+  <script src="./addMarkers.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAn0bQR9pGUzAxAvZkF739BIbDrhB6wMnM",
+      authDomain: "ar-menu-card-6d18b.firebaseapp.com",
+      databaseURL: "https://ar-menu-card-6d18b-default-rtdb.firebaseio.com",
+      projectId: "ar-menu-card-6d18b",
+      storageBucket: "ar-menu-card-6d18b.appspot.com",
+      messagingSenderId: "714968924876",
+      appId: "1:714968924876:web:2546935b6db64db66eb869"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
   <!-- Local StyleSheet -->
+  <link href="./style.css" rel="stylesheet" />
  
   
   <!--Marker Handler Src-->
- 
+
 
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
 
-  <a-scene 
-    embedded vr-mode-ui="enabled: false"     
-    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;debugUIEnabled: false;"
-    gesture-detector>
-
+  <a-scene id="main-scene" vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+      sourceWidth:1280; sourceHeight:960; 
+      displayWidth: 1280; displayHeight: 960; 
+      debugUIEnabled: false;" gesture-detector create-markers create-buttons>
     <!-- Camera -->
     <a-entity camera></a-entity>
 
-    
-    
-    
   </a-scene>
 
   <!-- Button Main Div -->
+  <div id="button-div"></div>
  
 </body>
 
